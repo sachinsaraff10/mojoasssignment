@@ -24,7 +24,9 @@ passport.deserializeUser((obj, done) => {
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: process.env.NODE_ENV === 'production'
+        ? 'https://mojoapp-49c92p4ty-sachins-projects-2892d717.vercel.app/auth/facebook/callback'
+        : 'http://localhost:3000/auth/facebook/callback',
     profileFields: ['id', 'displayName', 'photos', 'email']
 },
     (accessToken, refreshToken, profile, done) => {
