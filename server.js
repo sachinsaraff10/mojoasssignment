@@ -41,6 +41,11 @@ app.get('/auth/facebook/callback',
     }
 );
 
+app.get('/', (req, res) => {
+    // Redirects the user to Facebook authentication
+    res.redirect('/auth/facebook');
+});
+
 app.get('/profile', (req, res) => {
     if (!req.isAuthenticated()) {
         return res.redirect('/auth/facebook');
