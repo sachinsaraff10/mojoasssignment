@@ -1,0 +1,20 @@
+{
+  "name": "mojoapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http-errors": "~1.6.3",
+    "jade": "^0.31.2",
+    "morgan": "~1.9.1",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0"
+  }
+}
