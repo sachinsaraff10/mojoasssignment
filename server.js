@@ -32,6 +32,10 @@ passport.use(new FacebookStrategy({
     }
 ));
 
+
+console.log('FACEBOOK_CLIENT_ID:', process.env.FACEBOOK_CLIENT_ID);
+console.log('FACEBOOK_CLIENT_SECRET:', process.env.FACEBOOK_CLIENT_SECRET);
+
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'public_profile', 'pages_show_list'] }));
 
 app.get('/auth/facebook/callback',
